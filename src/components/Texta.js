@@ -52,14 +52,14 @@ export default function Texta(props) {
     
     <textarea className="form-control"  value={text} onChange={handleOnChange} style={{backgroundColor: props.mode === 'dark'?'grey':'white',color:props.mode==='dark'?'white':'black'}} id="myBox"  rows="8" ></textarea>
   </div>
-  <button className="btn btn-primary my-3" onClick={handleUpClick} >convert to uppercase</button>
-  <div className="btn btn-primary mx-1" onClick={handleLoClick}>convert to lower case</div>
-  <div className="btn btn-primary" onClick={handleClear}>clear text</div>
-  <div className="btn btn-primary my-1 mx-1" onClick={handleCopy}>Copy Text</div>
-  <div className="btn btn-primary my-1 mx-1" onClick={handleEspace} >Remove Extra spaces</div>
-  <div className="btn btn-warning mx-1" onClick={replacecasefunc}>Replace words</div>
+  <button disabled={text.length===0} className="btn btn-primary my-3" onClick={handleUpClick} >convert to uppercase</button>
+  <button disabled={text.length===0} className="btn btn-primary mx-1"  onClick={handleLoClick}>convert to lower case</button>
+  <button disabled={text.length===0} className="btn btn-primary" onClick={handleClear}>clear text</button>
+  <button disabled={text.length===0} className="btn btn-primary my-1 mx-1" onClick={handleCopy}>Copy Text</button>
+  <button disabled={text.length===0}  className="btn btn-primary my-1 mx-1"  onClick={handleEspace} >Remove Extra spaces</button>
+  <button disabled={text.length===0} className="btn btn-warning mx-1"  onClick={replacecasefunc}>Replace words</button>
   
-  <button type="submit" onClick={speak} className="btn btn-warning mx-2 my-2">Speak</button>
+  <button disabled={text.length===0} type="submit" onClick={speak} className="btn btn-warning mx-2 my-2">Speak</button>
     </div>
     <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
         <h2>summary</h2>
